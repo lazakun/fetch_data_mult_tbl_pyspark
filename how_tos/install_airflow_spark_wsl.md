@@ -1,9 +1,9 @@
---install ubuntu from microsoft store
---chose a username and password
---use the following cmd commands to login back to the newly installed ubuntu os
+- install ubuntu from microsoft store
+- chose a username and password
+- use the following cmd commands to login back to the newly installed ubuntu os
 wsl -l: This command will list all of the installed WSL distributions.
 wsl -d <distribution name>: This command will start a new WSL session using the specified distribution.
--- save the following lines of code as a .sh file (for example spark_installation.sh)
+- save the following lines of code as a .sh file (for example spark_installation.sh)
 #!/bin/bash
 # -- use 'chmod u+x scripts/spark_installation.sh' to give spark_installation.sh executable permission
 
@@ -27,53 +27,54 @@ sudo chmod -R 777 /opt/spark
 echo 'export SPARK_HOME=/opt/spark' >> ~/.bashrc 
 echo 'export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin' >> ~/.bashrc
 
---execute this command to run the contents in the above .sh file
+- execute this command to run the contents in the above .sh file
 bash scripts/spark_installation.sh
---execute commands one by one
+- execute commands one by one
 source ~/.bashrc
 start-master.sh
---validate that spark master is up using url: http://localhost:8080/home
---get the spark master and url and port from the url above
---setup a worker (attached to the master) using this command below:
+- validate that spark master is up using url: http://localhost:8080/home
+- get the spark master and url and port from the url above
+- setup a worker (attached to the master) using this command below:
 start-slave.sh spark://XXXXXXXXXXXX:7077 
 --XXXXXXXXXXXX is "Lazlo." based on my spark master information (do not add the double quotation marks)
 
+![a](https://github.com/lazakun/fetch_data_mult_tbl_pyspark/assets/100403369/d264e1ba-5771-44cd-89a1-cc03974e1388)
 
 
---confirm python is installed on your machine using command
+- confirm python is installed on your machine using command
 python3 --version
---execute commands one by one
+- execute commands one by one
 sudo apt-get -y install python3-pip
 pip install virtualenv
---add airflow home path (AIRFLOW_HOME=/home/<username>/airflow) to bashrc file using the following commands
+- add airflow home path (AIRFLOW_HOME=/home/<username>/airflow) to bashrc file using the following commands
 nano ~/.bashrc
 
---use ctrl+s then ctrl+x to save and exit
---for example lazlo was used as username
+- use ctrl+s then ctrl+x to save and exit
+- for example lazlo was used as username
 
 
 
---install apache airflow using the following command
+- install apache airflow using the following command
 pip install apache-airflow
---initialize airflow database using the following command
+- initialize airflow database using the following command
 airflow db init
 NB: if you get get "command not found error", close the terminal and login to your linux wsl terminal afresh using this, rerun the command in the home directory (using cd ~)
 wsl -l: This command will list all of the installed WSL distributions.
 wsl -d <distribution name>: This command will start a new WSL session using the specified distribution.
 cd ~
---validate airflow directory is created in your home directory
+- validate airflow directory is created in your home directory
 
 
 
---create a user to login to aiflow with the following sample information (username:admin, first name: admin, last name: admin, role: admin, email: admin@admin.com)
+- create a user to login to aiflow with the following sample information (username:admin, first name: admin, last name: admin, role: admin, email: admin@admin.com)
 airflow users create  -u admin -f admin -l admin -r Admin -e admin@admin
---you would be prompted for to create an airflow pwd for the user
---create a 'dags' folder in the airflow directory
+- you would be prompted for to create an airflow pwd for the user
+- create a 'dags' folder in the airflow directory
 
 
 
---start the airflow web server, because spark master is using the default port 8080, start airflow web server as a daemon using an alternate port(8090)
+- start the airflow web server, because spark master is using the default port 8080, start airflow web server as a daemon using an alternate port(8090)
 airflow webserver --port 8090 -D
---start airflow schedular with the following command
+- start airflow schedular with the following command
 airflow scheduler
---login to airflow using localhost:8090 and confirm access
+- login to airflow using localhost:8090 and confirm access
