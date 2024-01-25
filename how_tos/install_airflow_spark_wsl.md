@@ -1,6 +1,7 @@
 - install ubuntu from microsoft store
 - chose a username and password
 - use the following cmd commands to login back to the newly installed ubuntu os
+  
   wsl -l: This command will list all of the installed WSL distributions.
   
   wsl -d <distribution name>: This command will start a new WSL session using the specified distribution.
