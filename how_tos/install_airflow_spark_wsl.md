@@ -1,3 +1,5 @@
+How to spark and airflow on Ubuntu WSL
+
 - install ubuntu from microsoft store
 - chose a username and password
 - use the following cmd commands to login back to the newly installed ubuntu os
