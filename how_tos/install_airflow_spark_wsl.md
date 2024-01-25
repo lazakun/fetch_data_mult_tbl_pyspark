@@ -2,6 +2,7 @@
 - chose a username and password
 - use the following cmd commands to login back to the newly installed ubuntu os
   wsl -l: This command will list all of the installed WSL distributions.
+  
   wsl -d <distribution name>: This command will start a new WSL session using the specified distribution.
 - execute this command to run the contents in the above .sh file
 bash scripts/spark_installation.sh
