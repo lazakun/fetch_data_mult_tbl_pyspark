@@ -1,4 +1,4 @@
-How to spark and airflow on Ubuntu WSL
+How to install spark and airflow on Ubuntu WSL
 
 - install ubuntu from microsoft store
 - chose a username and password
