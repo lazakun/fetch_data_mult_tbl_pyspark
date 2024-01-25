@@ -6,7 +6,9 @@
 
   wsl -d <distribution name>: This command will start a new WSL session using the specified distribution.
 - execute this command to run the contents in the above .sh file
+
 bash scripts/spark_installation.sh
+
 - execute commands one by one
 source ~/.bashrc
 start-master.sh
