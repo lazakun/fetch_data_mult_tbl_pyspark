@@ -49,10 +49,12 @@ pip install virtualenv
 - add airflow home path (AIRFLOW_HOME=/home/<username>/airflow) to bashrc file using the following commands
 nano ~/.bashrc
 
+![b](https://github.com/lazakun/fetch_data_mult_tbl_pyspark/assets/100403369/6c96d187-f7e3-46a2-907c-68784d26b495)
+
 - use ctrl+s then ctrl+x to save and exit
 - for example lazlo was used as username
 
-
+![c](https://github.com/lazakun/fetch_data_mult_tbl_pyspark/assets/100403369/3f99fcb4-4831-41f0-9ca8-056ca7e42bc6)
 
 - install apache airflow using the following command
 pip install apache-airflow
@@ -64,14 +66,14 @@ wsl -d <distribution name>: This command will start a new WSL session using the 
 cd ~
 - validate airflow directory is created in your home directory
 
-
+![d](https://github.com/lazakun/fetch_data_mult_tbl_pyspark/assets/100403369/3105240e-31e3-4c41-a0da-46b300720139)
 
 - create a user to login to aiflow with the following sample information (username:admin, first name: admin, last name: admin, role: admin, email: admin@admin.com)
 airflow users create  -u admin -f admin -l admin -r Admin -e admin@admin
 - you would be prompted for to create an airflow pwd for the user
 - create a 'dags' folder in the airflow directory
 
-
+![e](https://github.com/lazakun/fetch_data_mult_tbl_pyspark/assets/100403369/57c1d8e1-fba8-4ae7-ad79-f33e62dda00c)
 
 - start the airflow web server, because spark master is using the default port 8080, start airflow web server as a daemon using an alternate port(8090)
 airflow webserver --port 8090 -D
